@@ -1,55 +1,103 @@
 <html>
-<title>Test page</title>
+
+<head>
+    <title>Test page</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
 <body>
-	<h1>Hello from My App Two</h1>
-	<h3>These is what this page has covered</h3>
-	<ul>
-		<li>Lists</li> 
-		<li>Image</li>
-		<li>Form</li>
-		<li>Table<ol>
-			<li>table heads</li>
-			<li>table rows</li>
-		</ol></li>
-		<li>Video</li>
-	</ul>
-	<img src="assets/images/htm.jpg" alt="" width="300px">
-	<p>This might be the best image you have ever seen. Just kidding :)</p>
-	<form action="">
-		<div>
-			<label >id</label>
-			<input type="text" readonly>
-		</div>
-		<div>
-			<label >name</label>
-			<input type="text">
-		</div>
-		<div>
-			<label >quantity</label>
-			<input type="number">
-		</div>
-		<div>
-			<button>Submit Data</button>
-		</div>
-	</form>
-
-	<table border="1">
-		<tr>
-			<th>Id</th>
-			<th>Name</th>
-			<th>Quantity</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>Mac</td>
-			<td>12</td>
-		</tr>
-	</table>
-	<video width="400px" height="300px" controls>
-	  <source src="testmusic.mp4" type="video/mp4">
-	   Video not supported on this browser.- this will appear if the browser doesn't support the video tag.
-	</video>
-
+    <div class="container">
+        <div class="nav">
+            <ul>
+                <li><a href="#">Home</a> </li>
+                <li><a href="#">XP</a> </li>
+                <li><a href="#">About</a> </li>
+                <li><a href="#">Contact</a> </li>
+            </ul>
+        </div>
+        <div class="title">
+            <h1>Hello from My App Two</h1>
+        </div>
+        <div id="mydata">
+            <h3>These is what this page has covered with sass and css</h3>
+            <ul>
+                <li>Lists</li>
+                <li>Image</li>
+                <li>Form</li>
+                <li>Table
+                    <ol>
+                        <li>table heads</li>
+                        <li>table rows</li>
+                    </ol>
+                </li>
+                <li>Video</li>
+            </ul>
+        </div>
+        <div id="image">
+            <img src="assets/images/htm.jpg" alt="">
+            <p>This might be the best image you have ever seen. Just kidding :)</p>
+        </div>
+        <div id="form_div">
+            <p>My Form with SASS Style</p>
+            <form action="">
+                <div>
+                    <label>id</label>
+                    <br>
+                    <input type="text" required>
+                </div>
+                <div>
+                    <label>name</label>
+                    <br>
+                    <input type="text">
+                </div>
+                <div>
+                    <label>quantity</label>
+                    <br>
+                    <input type="number">
+                </div>
+                <div>
+                    <button id="btn1">Submit Data</button>
+                    <button id="btn2">Clear Data</button>
+                </div>
+            </form>
+        </div>
+        <div id="table-section">
+            <table>
+                <p>My table with Style</p>
+                <thead>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                </thead>
+                <tr>
+                    <td>1</td>
+                    <td>Mac</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Lenovo</td>
+                    <td>91</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>HP</td>
+                    <td>62</td>
+                </tr>
+            </table>
+        </div>
+        <!-- <div class="plugins">
+            <embed width="400" height="50" src="assets/images/funny.mp4">
+        </div> -->
+        <video width="400px" height="300px" controls>
+			<source src="assets/images/funny.mp4" type="video/mp4">
+			Video not supported on this browser.- this will appear if the browser doesn't support the video tag.
+		</video>
+        <p>another video on iframe from youtube</p>
+        <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+		</iframe>
+    </div>
 
 </body>
+
 </html>

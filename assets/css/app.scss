@@ -1,0 +1,140 @@
+$myFont: Helvetica,
+sans-serif;
+$myColor:wheat;
+$black:black;
+$defaultwidth:80%;
+body {
+    margin-top: 10px;
+    font-family: $myFont;
+    //background-color: $myColor;
+}
+
+@function computewidth($d) {
+    @return $defaultwidth/$d;
+}
+
+.title {
+    text-align: center;
+    transition: all 1s;
+}
+
+.title:hover {
+    margin: 5px;
+    transform: rotate(180deg);
+}
+
+.container {
+    background-image: url(../images/html.jpg);
+    justify-self: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding: 10px;
+}
+
+@mixin goodtext {
+    color: $black;
+    font-weight: bold;
+    font-family: fantasy;
+}
+
+p {
+    @include goodtext;
+}
+
+.nav {
+    // position: fixed;
+    //background-color: green;
+    ul {
+        text-align: right;
+        //background-color: burlywood;
+        border-top: 2px solid $black;
+        border-bottom: 2px solid $black;
+        justify-content: end;
+    }
+    li {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.4em;
+        transform: skew(20px);
+        //border-radius: 5px;
+        padding: 2px;
+        margin: 2px;
+        display: inline;
+        text-decoration: none;
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+    li:hover {
+        background-color: black;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+#mydata {
+    background-color: rgba($color: white, $alpha: .8);
+    padding-left: 20px;
+    border: 2px solid black;
+    h3 {
+        border-bottom: 2px solid black;
+    }
+}
+
+#image {
+    background-color: rgba($color: white, $alpha: .7);
+    img {
+        width: 50%;
+        margin-right: auto;
+        margin-left: 2px;
+    }
+}
+
+#form_div {
+    width: computewidth(2);
+    transform: rotate(10deg);
+    transform: rotate(0deg);
+    background-color: rgba($color: $myColor, $alpha: .6);
+    text-align: center;
+    input {
+        font-size: 1.3em;
+        border-radius: 10px;
+    }
+    #btn1 {
+        font-size: 1.3em;
+        color: white;
+        background-color: green;
+        border-radius: 15px;
+    }
+    #btn2 {
+        font-size: 1.3em;
+        color: white;
+        background-color: $black;
+    }
+    box-shadow: 3px 3px 5px black;
+}
+
+#form_div:hover {
+    background-color: rgba($color: $black, $alpha: .4);
+}
+
+#table-section {
+    table {
+        width: 60%;
+        thead {
+            background-color: $black;
+            color: white;
+        }
+        td {
+            background-color: wheat;
+        }
+        th,
+        td {
+            padding: 2px;
+            margin: 0px;
+        }
+    }
+}
