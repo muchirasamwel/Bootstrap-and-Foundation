@@ -1,8 +1,4 @@
-$myFont: Helvetica,
-sans-serif;
-$myColor:wheat;
-$black:black;
-$defaultwidth:80%;
+@import "partial";
 body {
     margin-top: 10px;
     font-family: $myFont;
