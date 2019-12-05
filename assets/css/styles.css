@@ -1,6 +1,7 @@
 body {
   margin-top: 10px;
   font-family: Helvetica, sans-serif;
+  background-color: black;
 }
 
 .title {
@@ -14,10 +15,13 @@ body {
 }
 
 .container {
-  background-image: url(../images/html.jpg);
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: black;
   justify-self: center;
-  margin-right: 10%;
-  margin-left: 10%;
   padding: 10px;
 }
 
@@ -27,11 +31,21 @@ p {
   font-family: fantasy;
 }
 
+.nav-holder {
+  width: inherit;
+  position: fixed;
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav {
+  z-index: 100000;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  box-shadow: -3px 3px 5px black;
+}
 .nav ul {
   text-align: right;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  justify-content: end;
 }
 .nav li {
   text-align: center;
@@ -48,16 +62,26 @@ p {
   color: black;
 }
 .nav li:hover {
-  background-color: black;
+  border-top: 2px solid black;
 }
 .nav li:hover a {
   text-decoration: none;
+  color: red;
+}
+
+#form_div, .nav {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#table-section table tr:hover td {
+  background-color: blue;
   color: white;
 }
 
 #mydata {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding-left: 20px;
+  margin-top: 4%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: -3px 3px 5px black;
   border: 2px solid black;
 }
 #mydata h3 {
@@ -65,56 +89,112 @@ p {
 }
 
 #image {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url(../images/learning-styles.jpg);
+  width: 100%;
+  height: 50%;
+  margin: auto;
+  margin-top: 7%;
+  padding: 10px;
+}
+#image .one {
+  width: 50%;
+  height: 100%;
+  padding: 5%;
+  float: left;
+}
+#image .two {
+  margin-left: 15%;
+  height: 100%;
+  padding: 5%;
+  color: white;
+}
+#image .two p {
+  text-shadow: 1px 1px 1px black;
+  color: white;
+  font-weight: bolder;
+  font-family: fantasy;
 }
 #image img {
-  width: 50%;
+  width: 80%;
   margin-right: auto;
-  margin-left: 2px;
+  margin-left: auto;
+}
+
+#divtwo {
+  top: -70px;
+  position: relative;
+  left: 0px;
+  width: 40%;
+  background-color: white;
+}
+
+button:hover {
+  color: white;
+  font-weight: bolder;
+  background: blue !important;
 }
 
 #form_div {
-  width: 40%;
+  z-index: -1;
+  padding: 5%;
   transform: rotate(10deg);
   transform: rotate(0deg);
-  background-color: rgba(245, 222, 179, 0.6);
-  text-align: center;
-  box-shadow: 3px 3px 5px black;
+  text-align: start;
+  box-shadow: -3px 3px 5px black;
 }
 #form_div input {
-  font-size: 1.3em;
-  border-radius: 10px;
+  font-size: 1.5em;
+  border: 2px black;
+  border-radius: 5px;
+  width: 100%;
 }
 #form_div #btn1 {
   font-size: 1.3em;
   color: white;
   background-color: green;
-  border-radius: 15px;
+  border: 2px white;
+  border-radius: 5px;
 }
 #form_div #btn2 {
-  font-size: 1.3em;
+  font-size: 1.2em;
+  border: 2px red;
+  background-color: red;
+  border: 2p red;
+}
+#form_div #btn2 :hover {
+  background-color: blue;
   color: white;
-  background-color: black;
+  font-weight: bold;
 }
 
-#form_div:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+#table-section {
+  background-color: white;
+  padding: 2%;
 }
-
 #table-section table {
-  width: 60%;
+  border-collapse: collapse;
+  width: 100%;
+  height: 25%;
 }
 #table-section table thead {
-  background-color: black;
   color: white;
 }
-#table-section table td {
+#table-section table thead th {
+  background-color: black;
+}
+#table-section table tr {
   background-color: wheat;
 }
 #table-section table th,
 #table-section table td {
-  padding: 2px;
+  padding: 2%;
   margin: 0px;
+}
+
+video {
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

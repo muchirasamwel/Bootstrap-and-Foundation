@@ -1,8 +1,8 @@
-@import "partial";
+@import "_partial";
 body {
     margin-top: 10px;
     font-family: $myFont;
-    //background-color: $myColor;
+    background-color: black;
 }
 
 @function computewidth($d) {
@@ -20,10 +20,14 @@ body {
 }
 
 .container {
-    background-image: url(../images/html.jpg);
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    background-attachment: fixed;
+    background-size: cover;
+    // background-image: url(../images/learning-styles.jpg);
+    background-color: black;
     justify-self: center;
-    margin-right: 10%;
-    margin-left: 10%;
     padding: 10px;
 }
 
@@ -33,19 +37,61 @@ body {
     font-family: fantasy;
 }
 
+@mixin primarybtn {
+    font-size: 1.2em;
+    border: 2px;
+    background-color: red;
+    border: 2p red;
+     :hover {
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+@mixin dangerbtn {
+    font-size: 1.2em;
+    border: 2px red;
+    background-color: red;
+    border: 2p red;
+     :hover {
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+@mixin goodtext2 {
+    text-shadow: 1px 1px 1px black;
+    color: white;
+    font-weight: bolder;
+    font-family: fantasy;
+}
+
+@mixin boxshadow {
+    box-shadow: -3px 3px 5px black;
+}
+
 p {
     @include goodtext;
 }
 
+.nav-holder {
+    //background-color: red;
+    width: inherit;
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+}
+
 .nav {
-    // position: fixed;
-    //background-color: green;
+    z-index: 100000;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    @extend %semit_t; //background-color: $white;
+    @include boxshadow;
     ul {
         text-align: right;
-        //background-color: burlywood;
-        border-top: 2px solid $black;
-        border-bottom: 2px solid $black;
-        justify-content: end;
     }
     li {
         text-align: center;
@@ -63,74 +109,147 @@ p {
         }
     }
     li:hover {
-        background-color: black;
+        border-top: 2px solid $black;
+        //background-color: black;
         a {
             text-decoration: none;
+            color: red;
+        }
+    }
+}
+
+%semit_w {
+    background-color: rgba($color: white, $alpha: .8);
+}
+
+%semit_t {
+    background-color: rgba($color: white, $alpha: .9);
+}
+
+%rowshover {
+    &:hover {
+        td {
+            background-color: blue;
             color: white;
         }
     }
 }
 
+@function computeOpacity($co, $opp) {
+    @return rgba($color: $co, $alpha: $opp);
+}
+
 #mydata {
-    background-color: rgba($color: white, $alpha: .8);
-    padding-left: 20px;
+    margin-top: 4%;
+    background-color: computeOpacity(white, .9);
+    @include boxshadow;
     border: 2px solid black;
+    //background-image: url(../images/learning-styles.jpg);
     h3 {
         border-bottom: 2px solid black;
     }
 }
 
 #image {
-    background-color: rgba($color: white, $alpha: .7);
-    img {
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(../images/learning-styles.jpg);
+    width: 100%;
+    height: 50%;
+    margin: auto;
+    margin-top: 7%;
+    padding: 10px;
+    .one {
         width: 50%;
+        height: 100%;
+        padding: 5%;
+        //background: red;
+        float: left;
+    }
+    .two {
+        margin-left: 15%;
+        height: 100%;
+        padding: 5%;
+        color: white;
+        p {
+            @include goodtext2;
+        }
+        //background: black;
+    }
+    // background-color: rgba($color: white, $alpha: .7);
+    img {
+        width: 80%;
         margin-right: auto;
-        margin-left: 2px;
+        margin-left: auto;
     }
 }
 
+#divtwo {
+    top: -70px;
+    position: relative;
+    left: 0px;
+    width: 40%;
+    background-color: white;
+}
+
+button:hover {
+    color: white;
+    font-weight: bolder;
+    background: blue !important;
+}
+
 #form_div {
-    width: computewidth(2);
+    @extend %semit_t;
+    z-index: -1;
+    padding: 5%;
+    //width: 100%;
     transform: rotate(10deg);
     transform: rotate(0deg);
-    background-color: rgba($color: $myColor, $alpha: .6);
-    text-align: center;
+    text-align: start;
     input {
-        font-size: 1.3em;
-        border-radius: 10px;
+        font-size: 1.5em;
+        border: 2px black;
+        border-radius: 5px;
+        width: 100%;
     }
     #btn1 {
         font-size: 1.3em;
         color: white;
         background-color: green;
-        border-radius: 15px;
+        border: 2px white;
+        border-radius: 5px;
     }
     #btn2 {
-        font-size: 1.3em;
-        color: white;
-        background-color: $black;
+        @include dangerbtn;
     }
-    box-shadow: 3px 3px 5px black;
-}
-
-#form_div:hover {
-    background-color: rgba($color: $black, $alpha: .4);
+    @include boxshadow;
 }
 
 #table-section {
+    background-color: white;
+    padding: 2%;
     table {
-        width: 60%;
+        border-collapse: collapse;
+        width: 100%;
+        height: 25%;
         thead {
-            background-color: $black;
+            th {
+                background-color: $black;
+            }
             color: white;
         }
-        td {
+        tr {
             background-color: wheat;
+            @extend %rowshover;
         }
         th,
         td {
-            padding: 2px;
+            padding: 2%;
             margin: 0px;
         }
     }
+}
+
+video {
+    width: 100%;
 }
